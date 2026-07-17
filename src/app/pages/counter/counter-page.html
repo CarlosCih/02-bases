@@ -1,0 +1,15 @@
+<h1>Counter Page</h1>
+  <h2>Hola mundo!</h2>
+
+  <p>
+    <strong>Counter: </strong> {{ counter }}
+  </p>
+
+  <hr>
+  <p>
+    <strong>Counter Signal: </strong> {{ counterSignal() }}
+  </p>
+
+  <button class="counter" (click)="increment(1)" style="margin-right: 5px;">Increment</button>
+  <button class="counter" (click)="decrement(1)" style="margin-right: 5px;">Decrement</button>
+  <counter-button (reset)="counter = 10; counterSignal.set(10)"></counter-button>

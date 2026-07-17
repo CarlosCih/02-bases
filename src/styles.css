@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+
+dd{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+td{
+  font-size: 1.2rem;
+  font-weight:300 ;
+  font-style: italic;
+}
