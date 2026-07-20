@@ -1,0 +1,10 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg mb-4">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-bold" routerLink="/">⚡ MyApp</a>
+        <div class="navbar-nav gap-2">
+            <a class="nav-link btn btn-outline-secondary rounded-pill px-4" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Contador</a>
+            <a class="nav-link btn btn-outline-secondary rounded-pill px-4" [routerLink]="['/hero']" [routerLinkActive]="['active']">Heroe</a>
+            <a class="nav-link btn btn-outline-secondary rounded-pill px-4" [routerLink]="['/dragonball']" [routerLinkActive]="['active']">Dragon Ball</a>
+        </div>
+    </div>
+</nav>
