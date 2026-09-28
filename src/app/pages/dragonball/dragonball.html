@@ -13,15 +13,28 @@
           <form class="d-grid gap-3">
             <div>
               <label for="name" class="form-label fw-semibold">Nombre</label>
-              <input class="form-control form-control-lg" id="name" type="text" placeholder="Nombre del personaje" />
+              <input
+              class="form-control form-control-lg"
+              id="name"
+              type="text"
+              placeholder="Nombre del personaje"
+              [value]="name()"
+              (change)="name.set($event.target.value)"
+              (input)="name.set($event.target.value)"
+              />
             </div>
 
             <div>
-              <label for="power" class="form-label fw-semibold">Poder</label>
-              <input class="form-control form-control-lg" id="power" type="number" placeholder="Nivel de poder" />
+              <label for="power" class="form-label fw-semibold">Poder {{power()}}</label>
+              <input class="form-control form-control-lg"
+              id="power"
+              type="number"
+              placeholder="Nivel de poder"
+              [value]="power()"
+              (change)="power.set(powerInput.valueAsNumber)" #powerInput />
             </div>
 
-            <button class="btn btn-primary btn-lg mt-2" type="button">Agregar</button>
+            <button class="btn btn-primary btn-lg mt-2" type="button" (click)="addCharacter()">Agregar</button>
           </form>
         </div>
       </article>
@@ -30,16 +43,20 @@
     <div class="col-12 col-md-6 col-lg-5">
       <article class="card shadow-sm border-0 h-100">
         <div class="card-body p-4">
-          <h2 class="h4 mb-4">Listado</h2>
+          <h2 class="h4 mb-4">Listado fuertes</h2>
 
           <ul class="list-group list-group-flush">
             @for (character of characters(); track character.id; let idx = $index) {
-              <li class="list-group-item d-flex justify-content-between align-items-center">
+              @if(character.power > 1000){
+                 <li class="list-group-item d-flex justify-content-between align-items-center">
                 <span>{{idx + 1}}.- {{character.name}}</span>
-                <strong
-                [ngClass]="powerClasses()"
-                >({{character.power}})</strong>
+                <strong [ngClass]="powerClasses()">({{character.power}})</strong>
               </li>
+              } @else {
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <span>Aqui no hay personajes fuertes</span>
+                </li>
+              }
             }
           </ul>
         </div>
