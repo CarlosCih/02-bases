@@ -1,0 +1,23 @@
+<section class="container py-4 py-md-5">
+  <header class="text-center mb-4 mb-md-5">
+    <h1 class="display-6 fw-bold mb-1">Dragon Ball Super</h1>
+    <p class="text-secondary mb-0">Gestión de personajes</p>
+  </header>
+  <main class="row g-4 justify-content-center align-items-start">
+    <div class="col-12 col-md-6 col-lg-5">
+      <!-- dragonball-character-add -->
+        <!-- dragonball-character-add | INICIO -->
+        <dragonball-character-add
+        (newCharacter)="characters.update(characters => [...characters, $event])"
+        />
+      <!-- dragonball-character-add | FIN -->
+    </div>
+    <div class="col-12 col-md-6 col-lg-5">
+      <dragonball-character-list
+        listName="Listado de personajes"
+        [characters]="characters()"
+        />
+    </div>
+
+  </main>
+</section>

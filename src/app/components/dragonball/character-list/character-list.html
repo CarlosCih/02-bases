@@ -1,0 +1,22 @@
+    <div class="col-12 col-md-6 col-lg-5">
+      <article class="card shadow-sm border-0 h-100">
+        <div class="card-body p-4">
+          <h2 class="h4 mb-4">{{listName()}}</h2>
+
+          <ul class="list-group list-group-flush">
+            @for (character of characters(); track character.id; let idx = $index) {
+              @if(character.power > 1000){
+                 <li class="list-group-item d-flex justify-content-between align-items-center">
+                <span>{{idx + 1}}.- {{character.name}}</span>
+                <strong [ngClass]="powerClasses()">({{character.power}})</strong>
+              </li>
+              } @else {
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <span>Aqui no hay personajes fuertes</span>
+                </li>
+              }
+            }
+          </ul>
+        </div>
+      </article>
+    </div>

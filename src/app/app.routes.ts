@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { CounterPage } from './pages/counter/counter-page';
 import { HeroPage } from './pages/hero/hero-page';
 import { Dragonball } from './pages/dragonball/dragonball';
+import { DragonballSuper } from './pages/dragonball-super/dragonball-super';
 
 export const routes: Routes = [
   {
@@ -16,6 +17,10 @@ export const routes: Routes = [
   {
     path: 'dragonball',
     component: Dragonball,
+  },
+  {
+    path: 'dragonball-super',
+    component: DragonballSuper
   },
   {
     path: '**',
